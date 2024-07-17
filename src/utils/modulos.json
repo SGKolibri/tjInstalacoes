@@ -1,0 +1,320 @@
+{
+    "data": [
+        {
+            "titulo": "Módulo 1 - Introdução",
+            "descricao": "Introdução à lógica de programação",
+            "texto": "A lógica de programação é fundamental para o desenvolvimento de softwares eficientes e robustos. Ela abrange a criação de algoritmos, que são sequências de passos lógicos utilizados para resolver problemas computacionais. Compreender os princípios da lógica de programação é essencial para escrever códigos claros e concisos, que possam ser facilmente mantidos e compreendidos por outros desenvolvedores. Um algoritmo pode ser comparado a um conjunto de instruções detalhadas, semelhante a uma receita de culinária, que orienta o computador na execução de tarefas específicas.",
+            "perguntas": [
+                {
+                    "pergunta": "O que é lógica de programação?",
+                    "respostas": [
+                        {
+                            "a": "É a técnica de criar programas sem estrutura lógica"
+                        },
+                        {
+                            "b": "É a técnica de escrever algoritmos de forma confusa e ineficiente"
+                        },
+                        {
+                            "c": "É a técnica de escrever algoritmos de forma clara e eficiente"
+                        },
+                        {
+                            "d": "É a técnica de criar algoritmos sem solução para o problema"
+                        }
+                    ],
+                    "respostaCerta": "c"
+                },
+                {
+                    "pergunta": "O que é um algoritmo?",
+                    "respostas": [
+                        {
+                            "a": "É um conjunto de instruções que descrevem como resolver um problema"
+                        },
+                        {
+                            "b": "É um conjunto de instruções que descrevem como criar um problema"
+                        },
+                        {
+                            "c": "É um conjunto de instruções que descrevem como complicar um problema"
+                        },
+                        {
+                            "d": "É um conjunto de instruções que descrevem como ignorar um problema"
+                        }
+                    ],
+                    "respostaCerta": "a"
+                },
+                {
+                    "pergunta": "O que é um programa de computador?",
+                    "respostas": [
+                        {
+                            "a": "É um conjunto de instruções que descrevem como ignorar um problema"
+                        },
+                        {
+                            "b": "É um conjunto de instruções que descrevem como criar um problema"
+                        },
+                        {
+                            "c": "É um conjunto de instruções que descrevem como complicar um problema"
+                        },
+                        {
+                            "d": "É um conjunto de instruções que descrevem como resolver um problema"
+                        }
+                    ],
+                    "respostaCerta": "d"
+                },
+                {
+                    "pergunta": "Por que a lógica de programação é importante?",
+                    "respostas": [
+                        {
+                            "a": "Torna os programas mais confusos e ineficientes"
+                        },
+                        {
+                            "b": "Dificulta a resolução de problemas computacionais"
+                        },
+                        {
+                            "c": "Facilita a criação de algoritmos claros e eficientes"
+                        },
+                        {
+                            "d": "Não tem relevância para o desenvolvimento de softwares"
+                        }
+                    ],
+                    "respostaCerta": "c"
+                }
+            ]
+        },
+        {
+            "titulo": "Módulo 2 - Introdução ao Python",
+            "descricao": "Introdução à linguagem de programação Python",
+            "texto": "Python é uma das linguagens de programação mais populares e versáteis do mundo. Conhecida por sua sintaxe simples e clara, Python é amplamente utilizada em diversas áreas, como desenvolvimento web, ciência de dados, inteligência artificial, automação de tarefas, entre outras. A sintaxe do Python foi projetada para ser fácil de ler e escrever, tornando-a uma excelente escolha para iniciantes em programação. Além disso, Python possui uma vasta biblioteca padrão e uma comunidade ativa, o que facilita o acesso a recursos e suporte. Neste módulo, você aprenderá os conceitos básicos de Python, incluindo como instalar a linguagem, configurar o ambiente de desenvolvimento, e escrever seus primeiros programas. Também abordaremos a estrutura básica de um programa Python, como utilizar variáveis, operadores, e tipos de dados fundamentais. Ao concluir este módulo, você terá uma compreensão sólida dos fundamentos do Python e estará preparado para explorar tópicos mais avançados e aplicações práticas da linguagem.",
+            "perguntas": [
+                {
+                    "pergunta": "O que é Python?",
+                    "respostas": [
+                        {
+                            "a": "Uma linguagem de programação popular e versátil"
+                        },
+                        {
+                            "b": "Um sistema operacional"
+                        },
+                        {
+                            "c": "Um software de edição de texto"
+                        },
+                        {
+                            "d": "Um tipo de banco de dados"
+                        }
+                    ],
+                    "respostaCerta": "a"
+                },
+                {
+                    "pergunta": "Qual das seguintes áreas NÃO é uma aplicação comum de Python?",
+                    "respostas": [
+                        {
+                            "a": "Desenvolvimento web"
+                        },
+                        {
+                            "b": "Ciência de dados"
+                        },
+                        {
+                            "c": "Inteligência artificial"
+                        },
+                        {
+                            "d": "Construção de hardware"
+                        }
+                    ],
+                    "respostaCerta": "d"
+                },
+                {
+                    "pergunta": "Por que Python é uma boa escolha para iniciantes em programação?",
+                    "respostas": [
+                        {
+                            "a": "Porque tem uma sintaxe complexa"
+                        },
+                        {
+                            "b": "Porque é difícil de ler e escrever"
+                        },
+                        {
+                            "c": "Porque tem uma sintaxe simples e clara"
+                        },
+                        {
+                            "d": "Porque não possui uma comunidade ativa"
+                        }
+                    ],
+                    "respostaCerta": "c"
+                },
+                {
+                    "pergunta": "O que você precisa fazer primeiro para começar a programar em Python?",
+                    "respostas": [
+                        {
+                            "a": "Instalar a linguagem Python"
+                        },
+                        {
+                            "b": "Aprender HTML"
+                        },
+                        {
+                            "c": "Configurar um servidor web"
+                        },
+                        {
+                            "d": "Criar um banco de dados"
+                        }
+                    ],
+                    "respostaCerta": "a"
+                }
+            ]
+        },
+        {
+            "titulo": "Módulo 3 - Estruturas de Controle",
+            "descricao": "Compreendendo as estruturas de controle em Python",
+            "texto": "As estruturas de controle são fundamentais na programação, pois permitem o controle do fluxo de execução do código. Em Python, as principais estruturas de controle são condicionais e loops. As estruturas condicionais, como 'if', 'elif' e 'else', permitem que você execute diferentes blocos de código com base em certas condições. Por exemplo, você pode executar um bloco de código se uma condição for verdadeira e outro bloco se for falsa. Já os loops, como 'for' e 'while', permitem que você execute repetidamente um bloco de código enquanto uma condição for verdadeira. Estas estruturas são essenciais para a criação de programas dinâmicos e eficientes. Neste módulo, você aprenderá como utilizar estas estruturas de controle para criar programas mais complexos e funcionais.",
+            "perguntas": [
+                {
+                    "pergunta": "Qual estrutura de controle é usada para executar um bloco de código repetidamente?",
+                    "respostas": [
+                        {
+                            "a": "Estrutura condicional"
+                        },
+                        {
+                            "b": "Função"
+                        },
+                        {
+                            "c": "Loop"
+                        },
+                        {
+                            "d": "Classe"
+                        }
+                    ],
+                    "respostaCerta": "c"
+                },
+                {
+                    "pergunta": "Qual é a função do 'if' em Python?",
+                    "respostas": [
+                        {
+                            "a": "Repetir um bloco de código"
+                        },
+                        {
+                            "b": "Executar um bloco de código se uma condição for verdadeira"
+                        },
+                        {
+                            "c": "Definir uma função"
+                        },
+                        {
+                            "d": "Criar uma classe"
+                        }
+                    ],
+                    "respostaCerta": "b"
+                },
+                {
+                    "pergunta": "Qual estrutura de controle permite executar um bloco de código com base em várias condições?",
+                    "respostas": [
+                        {
+                            "a": "If"
+                        },
+                        {
+                            "b": "For"
+                        },
+                        {
+                            "c": "While"
+                        },
+                        {
+                            "d": "If-elif-else"
+                        }
+                    ],
+                    "respostaCerta": "d"
+                },
+                {
+                    "pergunta": "Qual loop é mais apropriado para iterar sobre uma sequência de itens?",
+                    "respostas": [
+                        {
+                            "a": "For"
+                        },
+                        {
+                            "b": "While"
+                        },
+                        {
+                            "c": "If"
+                        },
+                        {
+                            "d": "Else"
+                        }
+                    ],
+                    "respostaCerta": "a"
+                }
+            ]
+        },
+        {
+            "titulo": "Módulo 4 - Controle de Fluxo em Python",
+            "descricao": "Entendendo o controle de fluxo e estruturas de decisão em Python",
+            "texto": "O controle de fluxo é fundamental para qualquer linguagem de programação, permitindo que você tome decisões e execute diferentes ações com base em condições específicas. Neste módulo, você aprenderá sobre as estruturas de controle de fluxo em Python, incluindo condicionais (if, elif, else) e loops (for, while). Você também explorará como usar operadores lógicos e de comparação para criar expressões condicionais complexas. Além disso, você aprenderá sobre a importância da indentação no Python e como ela afeta a estrutura do seu código. Ao final deste módulo, você estará confortável com o controle de fluxo em Python e será capaz de escrever código mais claro e conciso.",
+            "perguntas": [
+                {
+                    "pergunta": "Qual é a finalidade das estruturas de controle de fluxo?",
+                    "respostas": [
+                        {
+                            "a": "Complicar a lógica de programação"
+                        },
+                        {
+                            "b": "Escrever código confuso e difícil de entender"
+                        },
+                        {
+                            "c": "Tomar decisões e executar diferentes ações com base em condições específicas"
+                        },
+                        {
+                            "d": "Ignorar completamente a lógica de programação"
+                        }
+                    ],
+                    "respostaCerta": "c"
+                },
+                {
+                    "pergunta": "Quais são os operadores de comparação em Python?",
+                    "respostas": [
+                        {
+                            "a": "==, !=, <, >, <=, >="
+                        },
+                        {
+                            "b": "&&, ||, !"
+                        },
+                        {
+                            "c": "and, or, not"
+                        },
+                        {
+                            "d": "+, -, *, /"
+                        }
+                    ],
+                    "respostaCerta": "a"
+                },
+                {
+                    "pergunta": "O que significa a palavra-chave 'elif' em Python?",
+                    "respostas": [
+                        {
+                            "a": "Uma gíria popular entre programadores Python"
+                        },
+                        {
+                            "b": "Uma forma alternativa de escrever 'else if'"
+                        },
+                        {
+                            "c": "Uma palavra-chave reservada para definir funções"
+                        },
+                        {
+                            "d": "Uma combinação de 'else' e 'if' para verificar múltiplas condições"
+                        }
+                    ],
+                    "respostaCerta": "d"
+                },
+                {
+                    "pergunta": "Por que a indentação é importante em Python?",
+                    "respostas": [
+                        {
+                            "a": "É apenas uma convenção de estilo, sem impacto real no código"
+                        },
+                        {
+                            "b": "Define o bloco de código e a estrutura do programa"
+                        },
+                        {
+                            "c": "Facilita a leitura do código, mas não é obrigatória"
+                        },
+                        {
+                            "d": "Pode ser ignorada sem afetar a funcionalidade do código"
+                        }
+                    ],
+                    "respostaCerta": "b"
+                }
+            ]
+        }
+    ]
+}
