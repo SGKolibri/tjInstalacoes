@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         'black': '#000',
+        'whatsapp': '#25d366',
       },
       colorScheme: {
       },

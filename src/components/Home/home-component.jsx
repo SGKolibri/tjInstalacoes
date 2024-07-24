@@ -1,48 +1,46 @@
 import { motion } from "framer-motion"
 import { Home } from "../../images"
+import { Link, animateScroll as scroll } from "react-scroll"
+import { Logo2 } from "../../images"
 
 export default function HomeComponent() {
-
     return (
         <>
-            <div className="flex flex-col text-center items-center flex-grow text-balance gap-4 py-20 font-montserrat text-[#606060]">
-                <div className="w-full relative flex bg-black text-center">
-                    <div className="absolute flex gap-2 font-medium flex-col inset-0 z-10 justify-center items-center text-white">
-                        <p className="text-4xl">
-                            Transformando seu sonho em realidade
+            <div className="w-full h-full flex flex-col items-center flex-grow gap-4 pt-10 mb-15 font-montserrat text-[#606060] overflow-hidden">                <div className="w-full h-full relative flex flex-col">
+                <img src={Home} alt="Home" className="w-full h-[625px] object-cover blur-sm" />
+
+                <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#06082b] opacity-60" />
+
+                <div className="w-full h-full absolute flex flex-col justify-center px-[10px] md:px-[40px]" style={{ top: '0', left: '0' }}> {/* Adjusted positioning */}
+                    <div className="flex-grow flex flex-col justify-center items-start pl-[0px] md:pl-[40px] gap-1">
+                        <img src={Logo2} alt="Logo" className="w-[350px] md:w-[400px]" />
+                        <p className="w-full text-xl md:text-4xl font-bold text-white ">
+                            <span className="flex md:hidden text-center mt-4">Especializados em instalações elétricas e hidráulicas para construtoras.</span>
+                            <span className="hidden md:flex mt-2">Especializados em instalações elétricas <br /> e hidráulicas para construtoras.</span>
                         </p>
-                        <p className="text-3xl">
-                            Serviços elétricos e hidráulicos
-                        </p>
-
                     </div>
-                    <div className="w-full flex text-white absolute inset-0 z-10 items-end px-3 pb-10 justify-between md:justify-around">
-                        <motion.button whileHover={{ scale: 1.01, backgroundColor: '#6C0000' }} whileTap={{ scale: 0.95 }}
-                            className="px-5 py-2 rounded-md bg-[#982727]"
+                    <div className="w-full flex flex-col md:flex-row justify-evenly gap-[0px] md:gap-[40px] pb-4"> {/* Added padding-bottom for spacing */}
+                        <motion.button
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.96 }}
+                            className="px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-tl-3xl md:rounded-md mb-2"
                         >
-                            <label className="hidden md:block cursor-pointer">Veja nossos serviços</label>
-                            <label className="block md:hidden cursor-pointer">Serviços</label>
+                            <Link to="services" smooth={true} offset={-50} duration={500}>
+                                Veja nossos serviços
+                            </Link>
                         </motion.button>
-
-                        <motion.button whileHover={{ scale: 1.01, backgroundColor: '#6C0000' }} whileTap={{ scale: 0.95 }}
-                            className="px-5 py-2 rounded-md bg-[#982727]"
+                        <motion.button
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.96 }}
+                            className="px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-br-3xl md:rounded-md mb-2"
                         >
-                            <label className="block md:hidden cursor-pointer">Agendar</label>
-                            <label className="hidden md:block cursor-pointer">Agende sua visita</label>
+                            <Link to="contact" smooth={true} offset={-50} duration={500}>
+                                Entre em contato
+                            </Link>
                         </motion.button>
                     </div>
-                    <img src={Home} alt="Home" className="w-full h-[450px] opacity-45 object-cover" />
                 </div>
-
-                <div className="w-full flex flex-col pt-2 justify-center items-center">
-                    <h1 className="text-4xl">
-                        TJ Instalações
-                    </h1>
-                    <div className="w-1/5 h-[2px] mb-4 bg-[#6C0000]" />
-                    <p className="text-xl text-balance">
-                        Empresa prestadora de serviços especializados em instalações elétricas e hidráulicas para construtoras.
-                    </p>
-                </div>
+            </div>
             </div>
         </>
     )

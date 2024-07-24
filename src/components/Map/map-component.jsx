@@ -1,14 +1,13 @@
 import React from "react";
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import { IoHome } from "react-icons/io5";
-import { IoIosPeople, IoMdPin } from "react-icons/io";
+import { HiMiniMapPin } from "react-icons/hi2";
 
 const containerStyle = {
     width: '100%',
     height: '400px'
 };
 
-const position = { lat: -16.679974, lng: -49.256513 }
+const position = { lat: -16.742402269114272, lng: -49.27695113361739 }
 
 export default function MapComponent() {
 
@@ -18,24 +17,24 @@ export default function MapComponent() {
     })
 
     return isLoaded ? (
-        <div className="w-full flex flex-col justify-center items-center py-12 font-montserrat text-[#606060]">
-
-            <h1 className="text-4xl flex items-center gap-2">
-                <IoMdPin className="inline text-[#FF9467] text-4xl" />
+        <div className="w-full h-full flex flex-col justify-center items-center text-center py-12 font-montserrat text-[#606060]">
+            <h1 className="text-3xl md:text-5xl flex items-center font-normal">
+                <HiMiniMapPin className="inline text-[#FF9467] text-4xl" />
                 Onde nos encontrar
             </h1>
             <p className="text-xl text-balance">
-                Rua 1043, 100 - St. Pedro Ludovico, Goiânia - GO, 74823-350
+                Av. Rio Verde - Vila Sao Tomaz, Aparecida de Goiânia - GO, 74915-515.
+                <br />
+                No prédio comercial E-Business Rio Verde.
             </p>
-
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={position}
-                zoom={16}
+                defaultCenter={position}
+                zoom={17}
             // onLoad={onLoad}
             // onUnmount={onUnmount}
             >
-                { /* Child components, such as markers, info windows, etc. */}
                 <>
                     <Marker position={position} />
                 </>

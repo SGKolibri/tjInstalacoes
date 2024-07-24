@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import NotFound from './pages/notFound'
 import HomePage from './pages/homePage'
 import { RequireAuth } from 'react-auth-kit'
+import LoginPage from './pages/loginPage'
 
 function App() {
 
@@ -12,6 +13,9 @@ function App() {
     <Routes>
       <Route path='/' element={
         <HomePage />
+      } />
+      <Route path='/login' element={
+        <LoginPage />
       } />
       <Route path="/*" element={<NotFound />} />
     </Routes >
