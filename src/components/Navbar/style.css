@@ -11,7 +11,7 @@
     left: 50%;
     bottom: 0;
     width: 0;
-    background: rgb(81, 81, 81);
+    background: rgb(41, 41, 41);
     /* Add transition for left and transform */
     transition: width .1s, left .1s, transform .1s;
     transform: translateX(-50%);

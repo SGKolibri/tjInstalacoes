@@ -140,7 +140,7 @@ export default function Footer() {
 
                 <div className="w-full h-full flex flex-col md:flex-row justify-between text-start pb-8 px-2">
 
-                    <div className="w-full md:w-1/2 flex flex-col items-center pl-[0px] md:pl-[128px] pb-[30px] md:pb-[0px]">
+                    <div className="w-full md:w-1/2 flex flex-col gap-3 items-center pl-[0px] md:pl-[85px] pb-[30px] md:pb-[0px]">
                         <h1 className="w-full text-2xl flex font-semibold justify-center text-center md:justify-start select-none">
                             Contatos
                         </h1>
@@ -164,7 +164,7 @@ export default function Footer() {
                                 <span className="select-none font-semibold">
                                     Central de atendimento:
                                 </span>
-                                <span className="font-light flex items-center cursor-pointer"
+                                <span className="font-light flex cursor-pointer justify-center"
                                     onClick={() => handleCopy(callCenterNumber)}
                                 >
                                     &nbsp;
@@ -179,7 +179,7 @@ export default function Footer() {
                                 <span className="select-none font-semibold">
                                     Email para contato:
                                 </span>
-                                <span className="font-light flex items-center cursor-pointer"
+                                <span className="font-light flex cursor-pointer justify-center"
                                     onClick={() => handleCopy(contactEmail, 'email')}
                                 >
                                     {contactEmail}
@@ -195,7 +195,7 @@ export default function Footer() {
                             </span>
                             Contato por e-mail
                         </h1>
-                        <form ref={form} className="w-full flex flex-col gap-3 items-center justify-center text-[#f2f2f2]">
+                        <form ref={form} className="w-full flex flex-col px-[10px] md:px-[0px] gap-3 items-center justify-center text-[#f2f2f2]">
                             <CustomTextField
                                 label="Seu nome"
                                 id="nome"
@@ -224,7 +224,7 @@ export default function Footer() {
                                 <motion.button
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.99 }}
-                                    className="w-1/2 h-full py-2 rounded-lg border-2 border-black bg-[#f2f2f2] text-black"
+                                    className="w-3/4 md:w-1/2 h-full py-2 rounded-[4px] border-2 border-black bg-[#f2f2f2] text-black"
                                     onClick={handleSendEmail}
                                 >
                                     Enviar

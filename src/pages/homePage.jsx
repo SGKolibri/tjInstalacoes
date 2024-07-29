@@ -15,12 +15,12 @@ export default function HomePage() {
                 <div id="home"  >
                     <HomeComponent />
                 </div>
-                {/* <div id='about'>
+                <div id='about'>
                     <AboutComponent />
                 </div>
                 <div id="services">
                     <ServiceComponent />
-                </div> */}
+                </div>
                 <div id="location">
                     <MapComponent />
                 </div>

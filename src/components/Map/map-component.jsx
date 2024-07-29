@@ -18,11 +18,11 @@ export default function MapComponent() {
 
     return isLoaded ? (
         <div className="w-full h-full flex flex-col justify-center items-center text-center py-12 font-montserrat text-[#606060]">
-            <h1 className="text-3xl md:text-5xl flex items-center font-normal">
+            <h1 className="text-3xl md:text-5xl pb-3 flex items-center font-normal">
                 <HiMiniMapPin className="inline text-[#FF9467] text-4xl" />
                 Onde nos encontrar
             </h1>
-            <p className="text-xl text-balance">
+            <p className="text-lg md:text-xl text-balance px-1">
                 Av. Rio Verde - Vila Sao Tomaz, Aparecida de Goiânia - GO, 74915-515.
                 <br />
                 No prédio comercial E-Business Rio Verde.

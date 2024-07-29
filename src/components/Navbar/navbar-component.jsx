@@ -73,7 +73,7 @@ export default function NavbarComponent() {
                     <Link to='/login'>
                         <motion.button
                             whileTap={{ scale: 0.99 }}
-                            className="px-[16px] md:px-[60px] py-2 shadow-md bg-[#982727] text-white rounded-tl-3xl md:rounded-md"
+                            className="px-[16px] md:px-[60px] py-2 shadow-md bg-[#982727] text-white rounded-[4px]"
                         >
                             Fazer login
                         </motion.button>
@@ -102,6 +102,7 @@ export default function NavbarComponent() {
                                             smooth={true}
                                             offset={-50}
                                             duration={500}
+                                            onClick={handleClose}
                                         >
                                             {linkNames[key]}
                                         </ScrollLink>
@@ -109,6 +110,11 @@ export default function NavbarComponent() {
                                 }
                                 )
                             }
+                        </div>
+                        <div className='w-full flex justify-center items-center pt-4 pl-10 text-white'>
+                            <Link to='/login' className='w-full no-underline text-lg text-[#982727]'>
+                                Fazer login
+                            </Link>
                         </div>
                     </Drawer>
                 </div>

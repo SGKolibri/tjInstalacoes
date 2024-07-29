@@ -1,13 +1,30 @@
+import React from "react";
 import { motion } from "framer-motion"
-import { Home } from "../../images"
+import { Home, Wide } from "../../images"
 import { Link, animateScroll as scroll } from "react-scroll"
 import { Logo2 } from "../../images"
 
 export default function HomeComponent() {
+
     return (
         <>
             <div className="w-full h-full flex flex-col items-center flex-grow gap-4 pt-10 mb-15 font-montserrat text-[#606060] overflow-hidden">                <div className="w-full h-full relative flex flex-col">
-                <img src={Home} alt="Home" className="w-full h-[625px] object-cover blur-sm" />
+                <div className="w-full h-full relative flex flex-col">
+                    <img
+                        src={Wide}
+                        alt="Home"
+                        className="w-full h-[625px] object-cover blur-sm"
+                    />
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        preload="auto"
+                        className="w-full h-[625px] object-cover blur-sm absolute top-0 left-0"
+                    >
+                        <source src='https://tj-instalacoes.s3.amazonaws.com/videos/wide_animation-o.mp4' type="video/mp4" />
+                    </video>
+                </div>
 
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#06082b] opacity-60" />
 
@@ -20,28 +37,27 @@ export default function HomeComponent() {
                         </p>
                     </div>
                     <div className="w-full flex flex-col md:flex-row justify-evenly gap-[0px] md:gap-[40px] pb-4"> {/* Added padding-bottom for spacing */}
-                        <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.96 }}
-                            className="px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-tl-3xl md:rounded-md mb-2"
-                        >
-                            <Link to="services" smooth={true} offset={-50} duration={500}>
+                        <Link to="services" smooth={true} offset={-50} duration={500}>
+                            <motion.button
+                                whileTap={{ scale: 0.96 }}
+                                className="w-full px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-tl-3xl md:rounded-md mb-2"
+                            >
                                 Veja nossos serviços
-                            </Link>
-                        </motion.button>
-                        <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.96 }}
-                            className="px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-br-3xl md:rounded-md mb-2"
-                        >
-                            <Link to="contact" smooth={true} offset={-50} duration={500}>
+                            </motion.button>
+                        </Link>
+                        <Link to="contact" smooth={true} offset={-50} duration={500}>
+                            <motion.button
+                                whileTap={{ scale: 0.96 }}
+                                className="w-full px-[16px] md:px-[60px] py-2.5 shadow-md bg-[#982727] text-white rounded-br-3xl md:rounded-md mb-2"
+                            >
                                 Entre em contato
-                            </Link>
-                        </motion.button>
+                            </motion.button>
+                        </Link>
                     </div>
                 </div>
+                {/* </div> */}
             </div>
-            </div>
+            </div >
         </>
     )
 }

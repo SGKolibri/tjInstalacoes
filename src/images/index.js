@@ -10,3 +10,7 @@ export { default as Logo } from './tj-logo.png';
 export { default as Opus } from './opus.png';
 export { default as Elmo } from './elmo.png';
 export { default as Habitat } from './habitat.png';
+export { default as WideAnimation } from './wide_animation.gif';
+export { default as Wide } from './wide.png';
+export { default as GrayPowerStation } from './gray.png';
+export { default as FrontView } from './front-view.png';
