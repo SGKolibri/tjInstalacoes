@@ -15,15 +15,11 @@ export default function HomeComponent() {
                         alt="Home"
                         className="w-full h-[625px] object-cover blur-sm"
                     />
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        preload="auto"
-                        className="w-full h-[625px] object-cover blur-sm absolute top-0 left-0"
-                    >
-                        <source src='https://tj-instalacoes.s3.amazonaws.com/videos/wide_animation-o.mp4' type="video/mp4" />
-                    </video>
+                    <img
+                        src="https://tj-instalacoes.s3.amazonaws.com/images/wide_animation.gif"
+                        alt="Home"
+                        className="w-full h-[625px] object-cover absolute blur-sm top-0 left-0 right-0 bottom-0"
+                    />
                 </div>
 
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#06082b] opacity-60" />
@@ -32,8 +28,8 @@ export default function HomeComponent() {
                     <div className="flex-grow flex flex-col justify-center items-start pl-[0px] md:pl-[40px] gap-1">
                         <img src={Logo2} alt="Logo" className="w-[350px] md:w-[400px]" />
                         <p className="w-full text-xl md:text-4xl font-bold text-white ">
-                            <span className="flex md:hidden text-center mt-4">Especializados em instalações elétricas e hidráulicas para construtoras.</span>
-                            <span className="hidden md:flex mt-2">Especializados em instalações elétricas <br /> e hidráulicas para construtoras.</span>
+                            <span className="flex md:hidden text-center mt-4">Especialista na execução de projetos elétricos e hidráulicos</span>
+                            <span className="hidden md:flex mt-2">Especialista na execução de projetos<br /> elétricos e hidráulicos</span>
                         </p>
                     </div>
                     <div className="w-full flex flex-col md:flex-row justify-evenly gap-[0px] md:gap-[40px] pb-4"> {/* Added padding-bottom for spacing */}
