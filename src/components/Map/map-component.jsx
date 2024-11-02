@@ -17,11 +17,13 @@ export default function MapComponent() {
     })
 
     return isLoaded ? (
-        <div className="w-full h-full flex flex-col justify-center items-center text-center py-12 font-montserrat text-[#606060]">
-            <h1 className="text-3xl md:text-5xl pb-3 flex items-center font-normal">
-                <HiMiniMapPin className="inline text-[#FF9467] text-4xl" />
-                Onde nos encontrar
-            </h1>
+        <div className="w-full h-full flex flex-col justify-center items-center text-center py-12 font-montserrat text-[#303030]">
+            <div className=" w-fit flex flex-col items-center pb-4">
+                <h3 className="tracking-wide text-4xl font-semibold">
+                    Onde nos encontrar
+                </h3>
+                {/* <div className="w-[80%] border-b-2 border-[#A20003]" /> */}
+            </div>
             <p className="text-lg md:text-xl text-balance px-1">
                 Av. Rio Verde - Vila Sao Tomaz, Aparecida de Goiânia - GO, 74915-515.
                 <br />
@@ -32,8 +34,8 @@ export default function MapComponent() {
                 center={position}
                 defaultCenter={position}
                 zoom={17}
-            // onLoad={onLoad}
-            // onUnmount={onUnmount}
+                // onLoad={onLoad}
+                // onUnmount={onUnmount}
             >
                 <>
                     <Marker position={position} />

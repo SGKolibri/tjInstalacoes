@@ -1,271 +1,111 @@
-import React, { useRef, useState } from "react";
-import { Alert, Fab, Snackbar, TextField } from "@mui/material";
-import { FaWhatsappSquare } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { FaSquareWhatsapp } from "react-icons/fa6";
-import { WhatsApp } from '../../images/index';
-import emailjs from '@emailjs/browser';
-import { motion } from "framer-motion";
-
-const CustomTextField = (props) => {
-    return (
-        <TextField
-            {...props}
-            variant="filled"
-            InputLabelProps={{
-                style: { color: 'white' },
-            }}
-            InputProps={{
-                style: { color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' },
-                ...props.InputProps,
-            }}
-            sx={{
-                '& .MuiFilledInput-underline:after': {
-                    borderBottomColor: 'white',
-                },
-                '& .MuiFilledInput-root': {
-                    '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    },
-                    '&.Mui-focused': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    },
-                },
-                ...props.sx,
-            }}
-        />
-    );
-};
-
-const fabGreenStyle = {
-};
+import { IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoWhatsapp, IoMdCall } from "react-icons/io";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { TJFooter } from "../../images";
+import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
+import { Fab } from "@mui/material";
 
 export default function Footer() {
 
-    const contactNumber = "(62) 9 9999-9999";
-    const callCenterNumber = "(62) 9 9999-9999";
-    const contactEmail = "atendimento@tjinstalacoes.com.br";
-
-    const whatsappLink = 'https://wa.me/5562995047887'
-
-    const form = useRef();
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [text, setText] = useState("");
-    const [sendingEmail, setSendingEmail] = useState(false);
-
-    const [open, setOpen] = useState(false);
-    const [severity, setSeverity] = useState("success");
-    const [message, setMessage] = useState("");
-
-    const SnackAlert = (severity, message) => {
-        setSeverity(severity);
-        setMessage(message);
-        setOpen(true);
-    };
-
-    const handleCloseSnackbar = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-        setOpen(false);
-    };
-
-    const handleCopy = (text, type) => {
-        navigator.clipboard.writeText(text);
-        SnackAlert("info", `${type === 'email' ? "Email" : "Número"} copiado para a área de transferência`);
-    }
-
-    const handleSendEmail = async (e) => {
-        e.preventDefault();
-        console.log(name, email, text);
-
-        if (!name || !email || !text) {
-            SnackAlert("info", "Preencha todos os campos.");
-            return;
-        }
-
-        setSendingEmail(true);
-
-        await emailjs
-            .sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-                form.current, {
-                publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
-            })
-            .then(
-                () => {
-                    SnackAlert("success", "Mensagem enviada com sucesso!");
-                },
-                (error) => {
-                    SnackAlert("error", `Erro ao enviar a mensagem: ${error.text}`);
-                },
-                clearInputs(),
-                form.current.reset(),
-                setSendingEmail(false),
-            );
-    };
-
-    const clearInputs = () => {
-        setName("");
-        setEmail("");
-        setText("");
-        const inputs = document.querySelectorAll('TextField, CustomTextField');
-        inputs.forEach(input => input.value = '');
-    }
+    const whatsappLink = 'https://wa.me/5562981359325'
 
     return (
-        <>
-
-            <Snackbar
-                open={open}
-                autoHideDuration={2000}
-                onClose={handleCloseSnackbar}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-            >
-                <Alert onClose={handleCloseSnackbar} severity={severity} sx={{ width: '100%' }}>
-                    {message}
-                </Alert>
-            </Snackbar>
-
-            <footer className="w-full h-full flex flex-col pt-2 pb-4 items-center justify-center font-montserrat bg-[#191919] text-[#f2f2f2] bottom-0">
-                <div className="w-full flex flex-col py-4 gap-1 items-center justify-center text-center">
-                    <h1 className="text-white font-normal text-4xl">
-                        Entre em contato conosco
-                    </h1>
-                    <span className="font-light text-sm md:text-base">
-                        Entre em contato pelo formulário ao lado ou, se preferir, pelo número/email de atendimento:
-                    </span>
+        <footer className="bg-[#fbfbfb] pt-2">
+            <div className="w-full h-full flex justify-between items-center font-medium font-montserrat text-[#303030] pb-2">
+                {/* Violet1 */}
+                <div className="w-[22%] h-full flex">
+                    <img src={TJFooter} alt="TJ Instalações" className="h-[185px]" />
                 </div>
-
-                <div className="w-full h-full flex flex-col md:flex-row justify-between text-start pb-8 px-2">
-
-                    <div className="w-full md:w-1/2 flex flex-col gap-3 items-center pl-[0px] md:pl-[85px] pb-[30px] md:pb-[0px]">
-                        <h1 className="w-full text-2xl flex font-semibold justify-center text-center md:justify-start select-none">
-                            Contatos
-                        </h1>
-                        <div className="w-full flex flex-col items-center md:items-start gap-3 md:gap-4 text-center">
-                            <div className="gap-1 md:gap-2 flex flex-col md:flex-row">
-                                <span className="select-none font-semibold">
-                                    Telefone de contato:
-                                </span>
-                                <span className="font-light flex cursor-pointer"
-                                    onClick={() => handleCopy(contactNumber)}
-                                >
-                                    &nbsp;
-                                    {contactNumber}
-                                    &nbsp;
-                                    <motion.button className="cursor-pointer" title="Conversar pelo WhatsApp">
-                                        <FaSquareWhatsapp className="w-6 h-6" />
-                                    </motion.button>
-                                </span>
+                {/* Blueish Violet */}
+                <div className="w-full h-full flex flex-col justify-center">
+                    {/* Top */}
+                    <div className="w-full h-full flex text-sm justify-between">
+                        <div className="w-fit flex flex-col text-center justify-around items-center">
+                            <span>Av. Rio Verde - Vila São Tomaz</span>
+                            <span>74915-515 Aparecida de Goiânia - GO</span>
+                            <span>Prédio Comercial E-Business Rio Verde - 15° Andar Sala 1506</span>
+                        </div>
+                        <div className="w-fit flex flex-col gap-2 justify-around text-sm">
+                            <span className="flex gap-2 items-center">
+                                <IoMdCall className="text-3xl" />
+                                (62) 9 98135-9325
+                            </span>
+                            <span className="flex gap-2 items-center">
+                                <IoMdMail className="text-3xl" />
+                                grupotjinstalacoes@gmail.com
+                            </span>
+                            <span>
+                                Atendimento das 08h as 18h, de Segunda a Sexta
+                            </span>
+                        </div>
+                        <div className="w-fit flex flex-col text-center justify-around">
+                            <div>
+                                <Link to="/services" className="text-[#303030] no-underline">
+                                    <span>Serviços</span>
+                                </Link>
                             </div>
-                            <div className="gap-1 md:gap-2 flex flex-col md:flex-row">
-                                <span className="select-none font-semibold">
-                                    Central de atendimento:
-                                </span>
-                                <span className="font-light flex cursor-pointer justify-center"
-                                    onClick={() => handleCopy(callCenterNumber)}
-                                >
-                                    &nbsp;
-                                    {callCenterNumber}
-                                    &nbsp;
-                                    <motion.button className="cursor-pointer" title="Conversar pelo WhatsApp">
-                                        <FaSquareWhatsapp className="w-6 h-6" />
-                                    </motion.button>
-                                </span>
+                            <div>
+                                <Link to="/work" className="text-[#303030] no-underline">
+                                    <span>Trabalhe Conosco</span>
+                                </Link>
                             </div>
-                            <div className="gap-1 md:gap-2 flex flex-col md:flex-row">
-                                <span className="select-none font-semibold">
-                                    Email para contato:
-                                </span>
-                                <span className="font-light flex cursor-pointer justify-center"
-                                    onClick={() => handleCopy(contactEmail, 'email')}
-                                >
-                                    {contactEmail}
-                                </span>
+                            <div>
+                                <Link to="/partnerships" className="text-[#303030] no-underline">
+                                    <span>Seja nosso parceiro</span>
+                                </Link>
+                            </div>
+                            <div>
+                                <Link to="/faq" className="text-[#303030] no-underline">
+                                    <span>FAQ</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
-
-                    <div className="w-full md:w-1/2 flex flex-col gap-3 items-center place-content-center">
-                        <h1 className="text-2xl flex gap-2 font-semibold select-none">
-                            <span className="flex items-center">
-                                <IoIosMail className="w-8 h-8 inline text-3xl" />
-                            </span>
-                            Contato por e-mail
-                        </h1>
-                        <form ref={form} className="w-full flex flex-col px-[10px] md:px-[0px] gap-3 items-center justify-center text-[#f2f2f2]">
-                            <CustomTextField
-                                label="Seu nome"
-                                id="nome"
-                                className="w-full md:w-3/4"
-                                name="name"
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                            <CustomTextField
-                                label="Seu e-mail"
-                                id="email"
-                                type="email"
-                                className="w-full md:w-3/4"
-                                name="email"
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <CustomTextField
-                                multiline
-                                rows={4}
-                                label="Sua mensagem"
-                                id="message"
-                                className="w-full md:w-3/4"
-                                name="text  "
-                                onChange={(e) => setText(e.target.value)}
-                            />
-                            <div className="w-full flex pb-1 justify-center">
-                                <motion.button
-                                    whileHover={{ scale: 1.01 }}
-                                    whileTap={{ scale: 0.99 }}
-                                    className="w-3/4 md:w-1/2 h-full py-2 rounded-[4px] border-2 border-black bg-[#f2f2f2] text-black"
-                                    onClick={handleSendEmail}
-                                >
-                                    Enviar
-                                </motion.button>
-                            </div>
-                        </form>
-
+                    {/* Bottom */}
+                    <div className="w-full h-full flex text-sm justify-center items-center pt-14">
+                        <span className="text-base">
+                            © Todos os direitos reservados a TJ Instalações - 2024
+                        </span>
                     </div>
                 </div>
-
-                <div className="w-full flex px-3 md:px-5 justify-center select-none">
-                    <span className="flex">
-                        © 2024 TJ Instalações
-                        <span className="hidden md:block">
-                            &nbsp;- Todos direitos reservados
-                        </span>
+                {/* Violet2 */}
+                <div className="w-[20%] h-full flex flex-col justify-center items-center gap-2">
+                    <span>
+                        Nossas redes
                     </span>
+                    <div className="w-full flex gap-3 justify-center items-center">
+                        <AiFillInstagram className="text-2xl" />
+                        <IoLogoWhatsapp className="text-2xl" />
+                        <IoLogoLinkedin className="text-2xl" />
+                    </div>
                 </div>
-
-                <motion.div
+            </div>
+            <motion.div
                     whileHover={{ scale: 1.08 }}
                     className="fixed bottom-4 right-4 md:bottom-4 md:right-4 z-50 sm:right-2 sm:bottom-2"
                     onClick={() => window.open(whatsappLink, '_blank')}
                 >
-                    <Fab
-                        size="large"
-                        sx={{
-                            ...fabGreenStyle,
-                            width: '60px', // Custom width
-                            height: '60px', // Custom height
-                            '& svg': {
-                                fontSize: '3rem', // Adjust icon size
-                            },
-                        }}
-                        // sx={fabGreenStyle}
-                        className="bg-[#f2f2f2]"
-                    >
-                        <img src={WhatsApp} alt="WhatsApp" className="w-10 h-10" />
-                    </Fab>
-                </motion.div>
-            </footer >
-        </>
+                <motion.button className="flex bg-whatsapp rounded-full shadow-md">
+                    <IoLogoWhatsapp className="text-5xl text-white p-2 m-2" />
+                </motion.button>
+                {/* <Fab
+                    size="large"
+                    sx={{
+                        width: '60px', // Custom width
+                        height: '60px', // Custom height
+                        '& svg': {
+                            fontSize: '3rem', // Adjust icon size
+                        },
+                    }}
+                    // sx={fabGreenStyle}
+                    className="bg-[#f2f2f2]"
+                >
+                    <IoLogoWhatsapp className="text-3xl text-green-500" />
+                </Fab> */}
+            </motion.div>
+        </footer>
     )
 }
