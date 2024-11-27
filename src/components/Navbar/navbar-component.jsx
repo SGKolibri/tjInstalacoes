@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { Logo } from "../../images/index";
+import { Logo, TJFooter } from "../../images/index";
 import { IoClose } from "react-icons/io5";
 import { FaBars } from "react-icons/fa6";
 import { Drawer } from "@mui/material";
@@ -30,7 +30,7 @@ export default function NavbarComponent() {
     services: "Serviços",
     partnerships: "Parcerias",
     work: "Trabalhe conosco",
-    faq: "Perguntas frequentes",
+    faq: "FAQ",
   };
 
   const [open, setOpen] = React.useState(false);
@@ -61,11 +61,7 @@ export default function NavbarComponent() {
               return (
                 <Link
                   key={index}
-                  className={`scroll-link text-[#303030] text-lg px-1 my-1 cursor-pointer ${
-                    location.pathname === "/" + key
-                      ? " underline decoration-[1.5px]"
-                      : " no-underline"
-                  }`}
+                  className={`scroll-link text-[#303030] text-md font-semibold px-1 my-1 cursor-pointer no-underline`}
                   to={"/" + key}
                   smooth={true}
                   offset={-50}
@@ -88,34 +84,39 @@ export default function NavbarComponent() {
             onClose={handleClose}
             sx={drawerStyle}
           >
-            <div className="w-full flex items-end justify-end py-2 px-2">
-              <IoClose
-                className="text-black w-10 h-10 cursor-pointer"
-                onClick={handleClose}
-              />
-            </div>
-            <div className="w-full flex flex-col">
-              {!location.pathname.includes("/modulo/") &&
-                Object.keys(linkNames).map((key, index) => {
-                  return (
-                    <ScrollLink
-                      key={index}
-                      className={`scroll-link text-black no-underline font-base text-lg px-1 my-1 cursor-pointer`}
-                      to={key}
-                      smooth={true}
-                      offset={-50}
-                      duration={500}
-                      onClick={handleClose}
-                    >
-                      {linkNames[key]}
-                    </ScrollLink>
-                  );
-                })}
-            </div>
-            <div className="w-full flex justify-center items-center pt-4 pl-10 text-white">
-              <Link to="http://localhost:5173/login" className="w-full text-lg">
-                Portal da equipe
-              </Link>
+            <div className="relative h-full">
+              <div className="w-full flex items-end justify-end py-2 px-2">
+                <IoClose
+                  className="text-black w-10 h-10 cursor-pointer"
+                  onClick={handleClose}
+                />
+              </div>
+              <div className="w-full flex flex-col gap-3">
+                {!location.pathname.includes("/modulo/") &&
+                  Object.keys(linkNames).map((key, index) => {
+                    return (
+                      <Link
+                        key={index}
+                        className={`scroll-link text-black no-underline font-base text-lg my-1 cursor-pointer `}
+                        to={"/" + key}
+                        smooth={true}
+                        offset={-50}
+                        duration={500}
+                        onClick={handleClose}
+                      >
+                        <div
+                          className={`py-[9px] ${
+                            location.pathname === `/${key}`
+                              ? "bg-[#A20003] text-white"
+                              : ""
+                          }`}
+                        >
+                          <span className="w-full pl-5">{linkNames[key]}</span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+              </div>
             </div>
           </Drawer>
         </div>

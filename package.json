@@ -1,7 +1,7 @@
 {
   "name": "tj-instalacoes-1.0",
   "version": "0.1.0",
-  "hoomepage": "http://tjinstalacoes.com",
+  "homepage": "http://tjinstalacoes.com",
   "private": true,
   "dependencies": {
     "@chakra-ui/toast": "^7.0.0",

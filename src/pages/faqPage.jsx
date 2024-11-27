@@ -1,7 +1,8 @@
 import Footer from "../components/Footer/footer-component";
 import NavbarComponent from "../components/Navbar/navbar-component";
 import { RiQuestionAnswerFill } from "react-icons/ri";
-import { FAQPNG, Question } from "../images";
+import { FAQPNG } from "../images";
+import { useMediaQuery } from "@mui/material";
 
 export default function FAQPage() {
   const questions = [
@@ -55,17 +56,20 @@ export default function FAQPage() {
           src={FAQPNG}
           alt="Servics"
           className="w-full h-full object-cover"
+          style={{
+            height: useMediaQuery("(min-width: 768px)") ? "300px" : "300px",
+          }}
         />
-        <div className="w-[60%] flex flex-col justify-center items-center text-lg">
+        <div className="w-full md:w-[60%] flex flex-col justify-center items-center text-lg text-center px-[36px] md:px-[0px]">
           <div className="w-fit flex flex-col justify-center items-center pt-14 pb-12">
-            <h1 className="tracking-wide text-4xl">FAQ</h1>
+            <h1 className="tracking-wide text-3xl md:text-4xl">FAQ</h1>
             <div className="w-[70%] border-b-2 border-[#A20003]"></div>
           </div>
           <span className="w-full flex text-justify tracking-wide justify-center font-semibold">
-            Serviços Elétrivos e Hidráulicos
+            Serviços Elétricos e Hidráulicos
           </span>
         </div>
-        <div className="w-[70%] grid grid-cols-2 grid-rows-4 py-5 gap-5">
+        <div className="w-[70%] flex flex-col md:grid md:grid-cols-2 md:grid-rows-4 py-5 gap-5">
           {questions.map((question, index) => (
             <div className="flex gap-2">
               <div className="h-full flex justify-center items-start">
