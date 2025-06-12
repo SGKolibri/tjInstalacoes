@@ -6,22 +6,14 @@ import { Logo1 } from "../../images";
 import NavbarComponent from "../Navbar/navbar-component";
 
 export default function HomeComponent() {
-  const HomeImg =
-    "https://tj-instalacoes.s3.us-east-1.amazonaws.com/images/wide_animation.gif";
-
   return (
     <>
       <NavbarComponent />
       <div className="w-full h-full flex flex-col items-center flex-grow gap-4 pt-16 font-montserrat overflow-hidden">
         <div className="w-full h-full relative flex flex-col">
-          <div
-            className="w-full h-[625px] flex flex-col bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${HomeImg})`,
-            }}
-          >
-            <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#030416] opacity-60" />
-          </div>
+          <img src={HomeBG} alt="Home" className="w-full h-full object-cover" />
+          {/* Dark overlay layer */}
+          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
 
         <div
